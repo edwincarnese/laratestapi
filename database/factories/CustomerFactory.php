@@ -23,9 +23,9 @@ class CustomerFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'photo' => $this->faker->sentence(1, true),
+            'photo' => $this->faker->imageUrl(),
             'email' => $this->faker->unique()->safeEmail,
-            'phone' => $this->faker->phoneNumber,
+            'phone' => $this->faker->numerify('###-###-####'),
             'gender' => $this->faker->randomElement(['male', 'female', 'other']),
             'birthdate' => $this->faker->dateTimeBetween('1900-01-01', '2020-12-31')
         ];
